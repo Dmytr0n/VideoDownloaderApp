@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "videodownloader", "videodownloader.csproj", "{F14C7999-2CF5-4A97-8586-67151AA2974A}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "vidownloader", "..\vidownloader\vidownloader.vdproj", "{7B385431-71F7-4ACE-AEE6-6FFE32B70BC3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F14C7999-2CF5-4A97-8586-67151AA2974A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F14C7999-2CF5-4A97-8586-67151AA2974A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F14C7999-2CF5-4A97-8586-67151AA2974A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F14C7999-2CF5-4A97-8586-67151AA2974A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B385431-71F7-4ACE-AEE6-6FFE32B70BC3}.Debug|Any CPU.ActiveCfg = Debug
+		{7B385431-71F7-4ACE-AEE6-6FFE32B70BC3}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EAFBB20A-DBD3-438A-94B1-9956BB2CF741}
+	EndGlobalSection
+EndGlobal

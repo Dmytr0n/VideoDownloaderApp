@@ -1,0 +1,54 @@
+# Build results
+bin/
+obj/
+out/
+
+# Visual Studio specific files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Installer output
+*.msi
+*.exe
+
+# Logs, database files, and more
+*.log
+*.dmp
+*.tmp
+*.bak
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE configurations
+.idea/
+*.iml
+
+# Packages and dependencies
+packages/
+node_modules/
+
+# Temporary files
+*.tmp
+*.cache
+*.pdb
+*.pidb
+*.svclog
+*.suo
+*.TestResults
+*.tlog
+*.vspscc
+*.vssscc
+*.orig
+
+# Other generated files
+_ReSharper/
+*.resharper
+*.pyc
+*.class
+*.dbmdl
+*.jfm

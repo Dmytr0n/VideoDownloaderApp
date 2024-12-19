@@ -10,10 +10,6 @@ out/
 *.userosscache
 *.sln.docstates
 
-# Installer output
-*.msi
-*.exe
-
 # Logs, database files, and more
 *.log
 *.dmp

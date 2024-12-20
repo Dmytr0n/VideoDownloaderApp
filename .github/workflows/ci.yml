@@ -36,6 +36,13 @@ jobs:
     runs-on: ubuntu-22.04
     needs: run-script
     steps:
+    
+      - name: Download artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-project
+          path: ./artefacts  # Завантажуємо артефакти у вказану папку
+      
       - name: Create release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

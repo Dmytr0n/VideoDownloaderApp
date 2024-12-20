@@ -41,10 +41,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.ref_name }}
           run: |
-            # Додаємо артефакти до релізу
-            gh release create "$tag" \
-                --repo="$GITHUB_REPOSITORY" \
-                --title="${GITHUB_REPOSITORY#*/} ${tag#v}" \
-                --generate-notes \
-                "./deploy\installer/VideoDownloaderInstaller.exe"  # Додаємо артефакт до релізу
-    
+              # Додаємо артефакти до релізу
+              gh release create "$tag" \
+                  --repo="$GITHUB_REPOSITORY" \
+                  --title="${GITHUB_REPOSITORY#*/} ${tag#v}" \
+                  --generate-notes \
+                  "./deploy\installer/VideoDownloaderInstaller.exe"  # Додаємо артефакт до релізу
+      

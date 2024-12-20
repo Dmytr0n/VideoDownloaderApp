@@ -7,7 +7,7 @@
 ## **Current Version**
 The latest available version is **1.0.0**.
 
-[Download Video Downloader v1.0.0](https://github.com/your-username/your-repo/releases/tag/v1.0.0)
+[Download Video Downloader v1.0.0](https://github.com/Dmytr0n/VideoDownloaderApp/releases/tag/VideoDownloader_v1.0.0)
 
 ---
 
@@ -22,7 +22,8 @@ The latest available version is **1.0.0**.
 
 ## **Installation**
 
-1. Download the installer for version **1.0.0** from the [Releases](https://github.com/your-username/your-repo/releases) section.
+1. Download the installer for version **1.0.0** from the [Releases]([Download Video Downloader v1.0.0](https://github.com/Dmytr0n/VideoDownloaderApp/releases)
+) section.
 2. Run the `.msi` file and follow the on-screen instructions.
 3. After installation, launch the application from the desktop shortcut or Start Menu.
 
@@ -71,7 +72,7 @@ The application is optimized for MP4 by default. You can modify `yt-dlp` argumen
 ## **Screenshots**
 
 ### Main Interface:
-![Main Interface](https://github.com/your-username/your-repo/blob/main/screenshots/main-interface.png)
+![Main Interface](https://github.com/Dmytr0n/VideoDownloaderApp/blob/feature/develop/installer-support/screenshots/main-interface.png)
 
 ---
 
@@ -108,4 +109,4 @@ Special thanks to:
 
 ## **Contact**
 
-For questions or feedback, feel free to open an [issue](https://github.com/your-username/your-repo/issues) or contact me at **[your-email@example.com](mailto:your-email@example.com)**.
+For questions or feedback, feel free to open an [issue](https://github.com/Dmytr0n/VideoDownloaderApp/issues) or contact me at **[kluckodima@gmail.com](kluckodima@gmail.com)**.

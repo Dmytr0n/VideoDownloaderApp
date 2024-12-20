@@ -5,7 +5,7 @@ on:
     branches:
       - '*'
     tags:
-      - 'v*'  
+      - 'v*'
   pull_request:
     branches:
       - '*'
@@ -39,12 +39,13 @@ jobs:
           git tag v1.0.0  # Створюємо тег
           git push origin v1.0.0  # Пушимо тег у репозиторій
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Використовуємо GITHUB_TOKEN для пушу 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            ./deploy/installer/  # Шлях до файлів для релізу
+            ./deploy/installer/*  # Додати всі файли в директорії installer
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

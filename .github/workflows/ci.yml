@@ -40,7 +40,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.ref_name }}
-          run: |
+        run: |
               # Додаємо артефакти до релізу
               gh release create "$tag" \
                   --repo="$GITHUB_REPOSITORY" \

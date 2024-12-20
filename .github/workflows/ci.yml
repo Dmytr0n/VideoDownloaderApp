@@ -10,9 +10,6 @@ on:
     branches:
       - '*'
 
-permissions:
-  contents: write 
-
 jobs:
   run-script:
       runs-on: windows-latest
@@ -33,13 +30,6 @@ jobs:
         with:
           name: build-project
           path: ./artefacts
-      
-      - name: Create and push tag
-        run: |
-          git tag v1.0.0  # Створюємо тег
-          git push origin v1.0.0  # Пушимо тег у репозиторій
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create Release
         uses: softprops/action-gh-release@v1

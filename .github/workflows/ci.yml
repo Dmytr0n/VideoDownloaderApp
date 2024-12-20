@@ -31,20 +31,17 @@ jobs:
           name: build-project
           path: ./artefacts
 
-      - name: Extract tag name
-        id: extract_tag
-        run: |
-          TAG_NAME=${GITHUB_REF#refs/tags/}  # Видаляємо префікс refs/tags/
-          echo "TAG_NAME=$TAG_NAME" >> $GITHUB_ENV  # Зберігаємо TAG_NAME в змінну середовища
-
-      - name: Create Release
-        id: release
-        uses: actions/create-release@v1
+  release:
+    name: Release pushed tag
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Create release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: "${{ env.TAG_NAME }}"  # Використовуємо очищений ім'я тега
-          release_name: "Release ${{ env.TAG_NAME }}"  # Назва релізу з тегом
-          draft: false
-          prerelease: false
+          tag: ${{ github.ref_name }}
+        run: |
+          gh release create "$tag" \
+              --repo="$GITHUB_REPOSITORY" \
+              --title="${GITHUB_REPOSITORY#*/} ${tag#v}" \
+              --generate-notes
 

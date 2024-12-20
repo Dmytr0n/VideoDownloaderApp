@@ -10,6 +10,9 @@ on:
     branches:
       - '*'
 
+permissions:
+  contents: write 
+
 jobs:
   run-script:
       runs-on: windows-latest
@@ -35,6 +38,8 @@ jobs:
         run: |
           git tag v1.0.0  # Створюємо тег
           git push origin v1.0.0  # Пушимо тег у репозиторій
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Використовуємо GITHUB_TOKEN для пушу 
 
       - name: Create Release
         uses: softprops/action-gh-release@v1

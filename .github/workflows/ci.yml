@@ -34,14 +34,16 @@ jobs:
   release:
     name: Release pushed tag
     runs-on: ubuntu-22.04
+    needs: run-script
     steps:
       - name: Create release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.ref_name }}
         run: |
+          # Додаємо артефакти до релізу
           gh release create "$tag" \
               --repo="$GITHUB_REPOSITORY" \
               --title="${GITHUB_REPOSITORY#*/} ${tag#v}" \
-              --generate-notes
-
+              --generate-notes \
+              --assets "./deploy\installer/VideoDownloaderInstaller.exe"  # Додаємо артефакт до релізу

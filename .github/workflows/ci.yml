@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - '*'
+    tags:
+      - 'v*'
   pull_request:
     branches:
       - '*'
@@ -28,3 +30,28 @@ jobs:
         with:
           name: build-project
           path: ./artefacts
+
+  release:
+    name: Release pushed tag
+    runs-on: ubuntu-22.04
+    needs: run-script
+    steps:
+    
+      - name: Download artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-project
+          path: ./artefacts  # Завантажуємо артефакти у вказану папку
+      
+      - name: Create release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ github.ref_name }}
+        run: |
+          TAG="VideoDownloader_v1.0.0"
+          RELEASE_NAME="VideoDownloader v1.0.0 Release"
+          gh release create "$TAG" \
+              --repo="$GITHUB_REPOSITORY" \
+              --title="$RELEASE_NAME" \
+              --generate-notes \
+              ./artefacts/*

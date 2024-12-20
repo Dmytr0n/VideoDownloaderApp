@@ -31,10 +31,15 @@ jobs:
           name: build-project
           path: ./artefacts
       
+      - name: Create and push tag
+        run: |
+          git tag v1.0.0  # Створюємо тег
+          git push origin v1.0.0  # Пушимо тег у репозиторій
+
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            ./deploy/installer/
+            ./deploy/installer/  # Шлях до файлів для релізу
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Цей токен автоматично надається GitHub Actions
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

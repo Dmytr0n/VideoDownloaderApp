@@ -28,3 +28,11 @@ jobs:
         with:
           name: build-project
           path: ./artefacts
+      
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            ./deploy/installer/
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Цей токен автоматично надається GitHub Actions

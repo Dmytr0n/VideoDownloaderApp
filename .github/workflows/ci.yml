@@ -48,7 +48,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.ref_name }}
         run: |
-          TAG="VideoDownloader_v1.0.0"
+          TAG="VideoDownloader_v1.0.1"
           RELEASE_NAME="VideoDownloader v1.0.1 Release"
           gh release create "$TAG" \
               --repo="$GITHUB_REPOSITORY" \

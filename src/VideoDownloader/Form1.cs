@@ -26,8 +26,9 @@ namespace videodownloader
             guna2TextBox2.Text = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\Downloads";
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private async void guna2Button1_Click(object sender, EventArgs e)
         {
+            await UpdateYtDlp();
             DownloadVideo();
         }
 
@@ -124,6 +125,47 @@ namespace videodownloader
             }
         }
 
+        private async Task UpdateYtDlp()
+        {
+            if (!File.Exists(ytDlpPath))
+            {
+                MessageBox.Show("yt-dlp.exe не знайдено!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                await Task.Run(() =>
+                {
+                    var process = new Process
+                    {
+                        StartInfo = new ProcessStartInfo
+                        {
+                            FileName = ytDlpPath,
+                            Arguments = "-U",  // оновлення yt-dlp
+                            RedirectStandardOutput = true,
+                            RedirectStandardError = true,
+                            UseShellExecute = false,
+                            CreateNoWindow = true
+                        }
+                    };
+
+                    process.Start();
+                    string output = process.StandardOutput.ReadToEnd();
+                    string error = process.StandardError.ReadToEnd();
+                    process.WaitForExit();
+
+                    if (!string.IsNullOrWhiteSpace(output))
+                        Console.WriteLine(output);
+                    if (!string.IsNullOrWhiteSpace(error))
+                        Console.WriteLine(error);
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка при оновленні yt-dlp: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
